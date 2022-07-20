@@ -7,7 +7,10 @@
     "heroku-postbuild": "npm run build"
   },
   "version": "1.0.0",
-  "engines": {"node":"16.15.1"},
+  "engines": {
+    "node":"16.15.1",
+    "npm":"8.11.0"
+  },
   "dependencies": {
     "autoprefixer": "^10.4.2",
     "compression": "^1.7.4",
