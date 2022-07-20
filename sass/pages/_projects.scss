@@ -1,0 +1,114 @@
+main[page="project-detail"]{
+    background-color: #303030;
+
+    .section_first-project{
+        padding: 12rem 0 4rem 0;
+        background-color: #303030;
+        @include respond(phone){
+            padding: 120px 0 4rem 0;
+        }
+        .ai-ends{
+            display: flex;
+            align-items: flex-end;
+            .title{
+                width: 100%;
+                padding-bottom: 2rem;
+                h2{
+                    font-size: 2.5rem;
+                    font-family: "Akzidenz-Grotesk-BQ-Bold";
+                }
+            }
+        }
+
+        .desc{
+            .cont,.coll{
+                list-style: none;
+                display: flex;
+                li{
+                    display: inline-block;
+                    margin-right: 1rem;
+                    &:first-child{
+                        width: 125px;
+                        p{
+                            position: relative;
+                            &::after{
+                                content: '';
+                                height: 1px;
+                                width: 50px;
+                                background-color: white;
+                                position: absolute;
+                                right: 0;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
+                        }
+                    }
+                    p{
+                        margin: 0;
+                        font-size: 1.2rem;
+                        text-decoration: none;
+                    }
+                    .bd{
+                        width: 40px;
+                        height: 1px;
+                        background-color: rgb(255, 255, 255);
+                    }
+                }
+            }
+            p{
+                text-decoration: underline;
+            }
+            .description{
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .section_second-project{
+        background-color: #303030;
+        text-align: center;
+        img{
+            padding: 2rem;
+        }
+    }
+
+    .section_third-project{
+        padding: 4em 0 2rem 0;
+        background-color: #303030;
+        @include respond(phone){
+            padding: 10rem 2rem;
+        }
+        .nav-project{
+            font-family: 'Sanchez', serif;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            ul{
+                list-style: none;
+                li{
+                    display: inline-block;
+                    margin-right: 4rem;
+                    a{
+                        cursor: pointer;
+                        text-decoration: underline;
+                        font-weight: bold;
+                        color: #acacac;
+                        &:hover{
+                        text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+        .desc-2{
+            margin-bottom: 7rem;
+            p{
+                text-decoration: underline;
+            }
+            @include respond(phone){
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    }
+}

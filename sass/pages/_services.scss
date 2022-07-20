@@ -1,0 +1,47 @@
+main[page=services]{
+    position: relative;
+    min-height: 100vh;
+    padding: 10rem;
+    @include respond(tab-port){
+        padding: 5rem;
+    }
+    .bg-image{
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+    .service__wrapper{
+        p{
+            font-size: 1.5rem;
+            color: black;
+        }
+        &_label{
+            margin-bottom: 6rem;
+            font-family: 'Sanchez', serif;
+        }
+        .service__text{
+            display: flex;
+            h2{
+                font-size: 3rem;
+                color: black;
+                font-family: "Akzidenz-Grotesk-BQ-Bold";
+                @include respond(phone){
+                    font-size: 2rem;
+                }
+            }
+        }
+        .service__col-1{
+            width: 40%;
+        }
+        .service__col-2{
+            width: 100%;
+            p{
+                text-decoration: underline;
+            }
+        }
+        .service__img{
+            margin-bottom: 5rem;
+        }
+    }
+}
