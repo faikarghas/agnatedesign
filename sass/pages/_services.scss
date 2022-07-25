@@ -1,6 +1,6 @@
-main[page=services]{
+section.header{
     position: relative;
-    min-height: 100vh;
+    min-height: 80vh;
     padding: 10rem;
     @include respond(tab-port){
         padding: 5rem;
@@ -45,3 +45,11 @@ main[page=services]{
         }
     }
 }
+
+// section.galleries{
+//     background-color: $bg_dark_agnate;
+//     .galleries__wrapper{
+//         display: flex;
+//         flex-wrap: wrap;
+//     }
+// }

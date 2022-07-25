@@ -599,8 +599,9 @@ function index({properties}) {
                 </div>
             </div>
             <main page="home">
-                <section className="section__first">
+                <section className="galleries">
                     {properties.map((item,i)=>{
+                        console.log(item)
                         return(
                             <ListItem key={i} title={item.title} subTitle={item.type} width={item.width} height={item.height} image={item.image} link={item.slug.current}></ListItem>
                         )
@@ -614,9 +615,6 @@ function index({properties}) {
 export async function getServerSideProps(context) {
     const query = '*[_type == "property"] | order(_createdAt desc)'
     const properties = await sanityClient.fetch(query)
-
-    console.log(properties);
-
 
     if(!properties){
         return {

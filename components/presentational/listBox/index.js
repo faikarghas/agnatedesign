@@ -15,7 +15,7 @@ const index = ({title,subTitle,image,width,height,link}) => {
                     <div className='img_wrapper' style={{height:`${height}px`}}>
                       <img alt="lanscape" src={urlFor(image)} width="100%" />
                     </div>
-                    <p className="title">{title}</p>
+                    {title? <p className="title">{title}</p> : ''}
                     <p className="subTitle">{subTitle}</p>
                 </div>
                 </a>

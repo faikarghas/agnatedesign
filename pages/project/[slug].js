@@ -5,7 +5,7 @@ import {sanityClient,urlFor} from '../../sanity'
 import {capitalizeFirstLetter} from '../../helpers/capitalizeFirstLetter'
 
 import HeaderLayout from '../../components/layout'
-
+import ListItem from '../../components/presentational/listBox/index'
 
 function project({properties}) {
 
@@ -83,6 +83,13 @@ function project({properties}) {
                         </Row>
                     </Container>
                 </div>
+                <section className="galleries">
+                    {properties[0].images.map((item,i)=>{
+                        return(
+                         <ListItem key={i} title={false} subTitle={''} width={50} height={320} image={item.asset} link={''}></ListItem>
+                        )
+                    })}
+                </section>
             </main>
         </React.Fragment>
     )

@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
-import HeaderLayout from '../components/layout'
 import {Container,Row,Col} from 'react-bootstrap'
 
+import {sanityClient} from '../sanity'
+
+import HeaderLayout from '../components/layout'
+import ListItem from '../components/presentational/listBox/index'
 
 
-export default class socialMedia extends Component {
 
-    render() {
-        return (
-            <React.Fragment>
-            <HeaderLayout height="120px" color="#f2f2f2" navColor="#303030" />
-            <main page="services">
+function socialMedia ({properties}) {
+    return (
+        <React.Fragment>
+        <HeaderLayout height="120px" color="#f2f2f2" navColor="#303030" />
+        <main page="services">
+            <section className="header">
                 <img className='bg-image' src='images/bg-web-agnate.png' width="100%" height="100%" />
                 <div className=" w-100">
                     <Container>
@@ -34,8 +37,37 @@ export default class socialMedia extends Component {
                         </Row>
                     </Container>
                 </div>
-            </main>
-            </React.Fragment>
-        )
+            </section>
+            <section className="galleries">
+                {properties.map((item,i)=>{
+                    return(
+                        <ListItem key={i} title={item.title} subTitle={item.type} width={50} height={320} image={item.image} link={item.slug.current}></ListItem>
+                    )
+                })}
+            </section>
+        </main>
+        </React.Fragment>
+    )
+}
+
+export async function getServerSideProps(context) {
+    const query = '*[_type == "property" && category == "social-media" ] | order(_createdAt desc)'
+    const properties = await sanityClient.fetch(query)
+
+    if(!properties){
+        return {
+            props:{
+                properties:[]
+            }
+        }
+    } else {
+        return{
+            props:{
+                properties
+            }
+        }
     }
 }
+
+export default socialMedia
+
