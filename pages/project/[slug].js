@@ -84,7 +84,7 @@ function project({properties}) {
                     </Container>
                 </div>
                 <section className="galleries">
-                    {properties[0].images.map((item,i)=>{
+                    {properties[0].images?.map((item,i)=>{
                         return(
                          <ListItem key={i} title={false} subTitle={''} width={50} height={320} image={item.asset} link={''}></ListItem>
                         )
