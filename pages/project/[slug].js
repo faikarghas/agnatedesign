@@ -61,6 +61,13 @@ function project({properties}) {
                             <Col xs={12} md={12} className="">
                                 <img src={urlFor(properties[0].image)} width="100%"/>
                             </Col>
+                            {properties[0].images?.map((item,i)=>{
+                                return(
+                                <Col xs={12} md={12} key={i} >
+                                    <img src={urlFor(item.asset)} width="100%"/>
+                                </Col>
+                                )
+                            })}
                         </Row>
                     </Container>
                 </div>
@@ -81,13 +88,13 @@ function project({properties}) {
                         </Row>
                     </Container>
                 </div>
-                <section className="galleries">
+                {/* <section className="galleries">
                     {properties[0].images?.map((item,i)=>{
                         return(
                          <ListItem key={i} title={false} category={properties[0].category} width={100} height={320} image={item.asset} link={''}></ListItem>
                         )
                     })}
-                </section>
+                </section> */}
             </main>
         </React.Fragment>
     )
