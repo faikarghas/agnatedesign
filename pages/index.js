@@ -603,7 +603,7 @@ function index({properties}) {
                     {properties.map((item,i)=>{
                         console.log(item)
                         return(
-                            <ListItem key={i} title={item.title} subTitle={item.type} width={item.width} height={item.height} image={item.image} link={item.slug.current}></ListItem>
+                            <ListItem key={i} title={item.title} category={item.category} width={item.width} height={item.height} image={item.image} link={item.slug.current}></ListItem>
                         )
                     })}
                 </section>

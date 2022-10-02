@@ -3,15 +3,12 @@ import {Container,Row,Col} from 'react-bootstrap'
 import Link from 'next/link'
 import {sanityClient,urlFor} from '../../sanity'
 import {capitalizeFirstLetter} from '../../helpers/capitalizeFirstLetter'
+import {dateFormat} from '../../helpers/date/index.js'
 
 import HeaderLayout from '../../components/layout'
 import ListItem from '../../components/presentational/listBox/index'
 
 function project({properties}) {
-
-    useEffect(()=>{
-        console.log(properties)
-    },[])
 
     return (
         <React.Fragment>
@@ -23,8 +20,10 @@ function project({properties}) {
                             <Col xs={12} md={6} className="ai-ends">
                                 <div className="title">
                                     <Row>
-                                        <Col xs={2}><p>{properties[0].releaseDate}</p></Col>
-                                        <Col xs={10}><h2>{properties[0].title}<br/>{capitalizeFirstLetter(properties[0].category)}<br/>.</h2></Col>
+                                        <Col xs={12} className="d-flex">
+                                            <p className='mr-4'>{dateFormat(properties[0].releaseDate)}</p>
+                                            <h2>{properties[0].title}<br/>{capitalizeFirstLetter(properties[0].category)}<br/>.</h2>
+                                        </Col>
                                     </Row>
                                 </div>
                             </Col>
@@ -86,7 +85,7 @@ function project({properties}) {
                 <section className="galleries">
                     {properties[0].images?.map((item,i)=>{
                         return(
-                         <ListItem key={i} title={false} subTitle={''} width={50} height={320} image={item.asset} link={''}></ListItem>
+                         <ListItem key={i} title={false} subTitle={''} width={100} height={320} image={item.asset} link={''}></ListItem>
                         )
                     })}
                 </section>
