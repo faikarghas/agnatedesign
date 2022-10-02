@@ -17,7 +17,7 @@ const index = ({title,image,width,height,link,category}) => {
                       <img alt="lanscape" src={urlFor(image)} width="100%" />
                     </div>
                     {title? <p className="title">{title}</p> : ''}
-                    <p className="subTitle">{capitalizeFirstLetter(category.split('-').join(' '))} |</p>
+                    {title? <p className="subTitle">{capitalizeFirstLetter(category?.split('-').join(' '))} |</p> : ''}
                 </div>
                 </a>
           </Link>
