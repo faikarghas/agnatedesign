@@ -40,7 +40,7 @@ function compoundService ({properties}) {
             <section className="galleries">
                 {properties.map((item,i)=>{
                     return(
-                        <ListItem key={i} title={item.title} subTitle={item.type} width={50} height={320} image={item.image} link={item.slug.current}></ListItem>
+                        <ListItem key={i} title={item.title} category={item.category} width={50} height={320} image={item.image} link={item.slug.current}></ListItem>
                     )
                 })}
             </section>
